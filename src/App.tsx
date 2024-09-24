@@ -4,6 +4,7 @@ import './App.css';
 import { getReposFromS3 } from './repo.service';
 import { Card } from './components/Card';
 import {Repository} from './types/repository'
+
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       {repos.map((repo) => (
-       <Card url={repo.url} name={repo.name} readMe={repo.readMe} />
+       <Card repo = {repo}/>
       ))}
     </div>
   );

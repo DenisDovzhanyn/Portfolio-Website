@@ -1,0 +1,15 @@
+.card {
+    background-color: black;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    color: aliceblue;
+    height: 70%;
+    width: 600px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
