@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {motion} from 'framer-motion';
 import logo from './logo.svg';
 import './App.css';
 import './loading.css';
 import { getReposFromS3 } from './repo.service';
 import { Card } from './components/Card';
 import {Repository} from './types/repository'
+
 
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
@@ -33,11 +35,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <motion.div className="App" 
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1 }}>
       {repos.map((repo) => (
-       <Card repo = {repo}/>
+        <Card repo = {repo}/>
       ))}
-    </div>
+    </motion.div>
   );
 
 }
