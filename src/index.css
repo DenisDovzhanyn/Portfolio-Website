@@ -2,6 +2,16 @@ html {
   height: 100%;
 }
 
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
 p {
   text-align: center;
 }
@@ -30,6 +40,3 @@ code {
     monospace;
 }
 
-#root {
-  height: 100%;
-}

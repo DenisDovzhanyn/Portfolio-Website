@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import logo from './logo.svg';
 import './App.css';
 import './loading.css';
@@ -30,7 +30,14 @@ function App() {
 
   if (loading) {
     return (
-      <div id='loading'>Loading...</div>
+      <AnimatePresence>
+        <motion.div id='loading'
+          animate = { {opacity: 1}}
+          exit={ {opacity: 0} }
+          transition={ {duration: 1} }>
+            Welcome...
+        </motion.div>
+      </AnimatePresence>
     )
   }
 

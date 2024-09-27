@@ -6,4 +6,6 @@
     align-items: center;
     color: whitesmoke;
     -webkit-text-stroke: medium;
+    text-align: center;
+    size: 40px;
 }
