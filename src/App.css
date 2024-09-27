@@ -1,4 +1,23 @@
- .App {
+.App {
+   display: flex;
+   flex-direction: row;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   box-sizing: border-box;
+   height: 100%;
+   align-items: center;
+   padding: 0px 100px;
+   column-gap: 100px;
+   background-color: lightcoral;
+ }
+
+ h1 {
+   text-align: center;
+   text-decoration: none;
+ }
+
+
+/* .App {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,3 +35,4 @@
  h1 {
     text-align: center;
  }
+    */

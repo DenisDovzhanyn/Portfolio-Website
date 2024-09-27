@@ -6,7 +6,7 @@ import './loading.css';
 import { getReposFromS3 } from './repo.service';
 import { Card } from './components/Card';
 import {Repository} from './types/repository'
-
+import { isVisible } from '@testing-library/user-event/dist/utils';
 
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
@@ -30,26 +30,26 @@ function App() {
 
   if (loading) {
     return (
+      
       <AnimatePresence>
         <motion.div id='loading'
-          animate = { {opacity: 1}}
-          exit={ {opacity: 0} }
+          key = 'loadingg'
+          initial = { {opacity: 0} }
+          animate = { {opacity: 1} }
+          exit={ {x: -300, opacity: 0} }
           transition={ {duration: 1} }>
-            Welcome...
+          Welcome...
         </motion.div>
       </AnimatePresence>
     )
   }
 
   return (
-    <motion.div className="App" 
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1 }}>
+    <div className="App" >
       {repos.map((repo) => (
         <Card repo = {repo}/>
       ))}
-    </motion.div>
+    </div>
   );
 
 }
