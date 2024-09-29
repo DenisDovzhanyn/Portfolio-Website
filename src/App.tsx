@@ -11,12 +11,14 @@ import { isVisible } from '@testing-library/user-event/dist/utils';
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
+  const [displayedRepos, setDisplayedRepos] = useState<Repository[]>([]);
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
         const repositoryInfo = await getReposFromS3();
         setRepos(Object.values(repositoryInfo));
+        
       } catch(error) {
         console.log('error loading');
       }
@@ -25,12 +27,46 @@ function App() {
       }
     }
     fetchRepos();
+    
   }, []);
 
+  useEffect(() => {
+    if(!repos.length) return; 
+
+    setDisplayedRepos(repos.slice(0,3));
+  }, [repos])
+
+  const nextCard = () => {
+    console.log('here');
+    setDisplayedRepos( currentDisplayed => {
+      
+      const originalRepoIndex: number = repos.findIndex(
+        (repo: Repository) => currentDisplayed[2] === repo);
+
+      const isOutOfBounds: boolean = (repos.length - 1 === originalRepoIndex)
+ 
+      const temp = isOutOfBounds ? [...currentDisplayed.slice(1), repos[0]] : [...currentDisplayed.slice(1), repos[originalRepoIndex + 1]];
+      console.log(temp);
+      return temp;
+    })
+  }
+
+
+  const previousCard = () => {
+    setDisplayedRepos( currentDisplayed => {
+
+      const originalRepoIndex: number = repos.findIndex(
+        (repo: Repository) => currentDisplayed[0] === repo);
+
+      const isOutOfBounds: boolean = (originalRepoIndex === 0);
+      
+      return isOutOfBounds ? [repos[repos.length - 1], ...currentDisplayed.slice(0,2)] : [repos[originalRepoIndex - 1], ...currentDisplayed.slice(0,2)]
+    })
+  }
 
   if (loading) {
     return (
-      
+
       <AnimatePresence>
         <motion.div id='loading'
           key = 'loadingg'
@@ -43,12 +79,15 @@ function App() {
       </AnimatePresence>
     )
   }
-
   return (
     <div className="App" >
-      {repos.map((repo) => (
-        <Card repo = {repo}/>
+      {displayedRepos.map((repo) => (
+        <Card repo = {repo} 
+        key={repo.name}/>
       ))}
+
+      <button onClick={nextCard}> CLICK ME PLEASE GOD</button>
+      <button onClick={previousCard}> PLEASE DONT CLICK ME OH MY GOD</button>
     </div>
   );
 

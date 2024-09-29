@@ -4,7 +4,7 @@ import './card.css'
 import { SocialPreview } from "../SocialPreview";
 export function Card(props: any) {
     return (
-        <motion.div className="card" key={props.title}
+        <motion.div className="card" 
         whileHover={{scale: 1.1}}
         initial={{ x: 2000 }}
         animate={{ x: 0}}
