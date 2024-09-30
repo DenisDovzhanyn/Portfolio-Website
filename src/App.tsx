@@ -37,7 +37,6 @@ function App() {
   }, [repos])
 
   const nextCard = () => {
-    console.log('here');
     setDisplayedRepos( currentDisplayed => {
       
       const originalRepoIndex: number = repos.findIndex(
@@ -46,7 +45,7 @@ function App() {
       const isOutOfBounds: boolean = (repos.length - 1 === originalRepoIndex)
  
       const temp = isOutOfBounds ? [...currentDisplayed.slice(1), repos[0]] : [...currentDisplayed.slice(1), repos[originalRepoIndex + 1]];
-      console.log(temp);
+     
       return temp;
     })
   }
