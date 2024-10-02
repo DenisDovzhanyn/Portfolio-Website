@@ -42,19 +42,19 @@ function App() {
     // setTimeOut here to let the cards receive the exitdirection update,
     // otherwise it can cause the cards to leave in the wrong direction
     setTimeout( () => {
-    setDisplayedRepos( currentDisplayed => {
-      const originalRepoIndex: number = repos.findIndex(
-        (repo: Repository) => currentDisplayed[2] === repo);
+      setDisplayedRepos( currentDisplayed => {
+        const originalRepoIndex: number = repos.findIndex(
+          (repo: Repository) => currentDisplayed[2] === repo);
 
-      const isOutOfBounds: boolean = (repos.length - 1 === originalRepoIndex)
- 
-      const temp = isOutOfBounds 
-      ? [...currentDisplayed.slice(1), repos[0]] 
-      : [...currentDisplayed.slice(1), repos[originalRepoIndex + 1]];
-     
-      return temp;
-    })
-  })
+        const isOutOfBounds: boolean = (repos.length - 1 === originalRepoIndex)
+  
+        const temp = isOutOfBounds 
+        ? [...currentDisplayed.slice(1), repos[0]] 
+        : [...currentDisplayed.slice(1), repos[originalRepoIndex + 1]];
+      
+        return temp;
+      })
+    }, 1)
   }
 
 
@@ -62,17 +62,17 @@ function App() {
     setExitDirection('right');
     
     setTimeout( () => {
-    setDisplayedRepos( currentDisplayed => {
-      const originalRepoIndex: number = repos.findIndex(
-        (repo: Repository) => currentDisplayed[0] === repo);
+      setDisplayedRepos( currentDisplayed => {
+        const originalRepoIndex: number = repos.findIndex(
+          (repo: Repository) => currentDisplayed[0] === repo);
 
-      const isOutOfBounds: boolean = (originalRepoIndex === 0);
-      
-      return isOutOfBounds 
-      ? [repos[repos.length - 1], ...currentDisplayed.slice(0,2)] 
-      : [repos[originalRepoIndex - 1], ...currentDisplayed.slice(0,2)]
-    })
-  })
+        const isOutOfBounds: boolean = (originalRepoIndex === 0);
+        
+        return isOutOfBounds 
+        ? [repos[repos.length - 1], ...currentDisplayed.slice(0,2)] 
+        : [repos[originalRepoIndex - 1], ...currentDisplayed.slice(0,2)]
+      })
+    }, 1)
   }
 
   if (loading) {
@@ -92,12 +92,9 @@ function App() {
   }
   return (
     <div className="App" >
-      <AnimatePresence>
         {displayedRepos.map( (repo) => 
           <Card repo = {repo} key={repo.name} direction={exitDirection}/>
         )}
-      </AnimatePresence>
-
       <button onClick={nextCard}> CLICK ME PLEASE GOD</button>
       <button onClick={previousCard}> PLEASE DONT CLICK ME OH MY GOD</button>
     </div>
