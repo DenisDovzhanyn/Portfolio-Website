@@ -98,16 +98,37 @@ function App() {
         )}
       </div>
       <div className='buttonContainer'>
-        <button className ='previousCard' onClick={previousCard}>
-          <svg xmlns="http://www.w3.org/2000/svg" height='80' width='80' viewBox="0 0 512 512">
-            <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/> 
+        <motion.button className ='previousCard' 
+        onClick={previousCard}
+        whileHover={{
+          scale: 1.05,
+          transition: {duration: 0.5}
+        }}
+        whileTap={{
+          scale: 0.9,
+          transition: {duration: 0.2}
+        }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM116.7 244.7l112-112c4.6-4.6 11.5-5.9 17.4-3.5s9.9 8.3 9.9 14.8l0 64 96 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32l-96 0 0 64c0 6.5-3.9 12.3-9.9 14.8s-12.9 1.1-17.4-3.5l-112-112c-6.2-6.2-6.2-16.4 0-22.6z"/>
           </svg>
-        </button>
-        <button className ='nextCard' onClick={nextCard}> 
-          <svg xmlns="http://www.w3.org/2000/svg" height="80" width="80" viewBox="0 0 512 512">
-            <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/>
-          </svg> 
-        </button>
+        </motion.button>
+
+        <motion.button className ='nextCard' 
+        onClick={nextCard} 
+        whileHover={{
+          scale: 1.05,
+          transition: {duration: 0.5}
+        }}
+        whileTap={{
+          scale: 0.9,
+          transition: {duration: 0.2}
+        }}
+        > 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zm395.3 11.3l-112 112c-4.6 4.6-11.5 5.9-17.4 3.5s-9.9-8.3-9.9-14.8l0-64-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-64c0-6.5 3.9-12.3 9.9-14.8s12.9-1.1 17.4 3.5l112 112c6.2 6.2 6.2 16.4 0 22.6z"/>
+          </svg>
+        </motion.button>
       </div>
     </div>
   );

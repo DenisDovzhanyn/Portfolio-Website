@@ -40,11 +40,13 @@
    border-style: none;
    box-shadow: 6px 5px 20px 0px #432f2f;
    background-color: lightcoral;
+   overflow: hidden;
  }
 
- button:active {
-
+ button:hover {
+  cursor: pointer;
  }
+ 
  h1 {
    text-align: center;
    text-decoration: none;
