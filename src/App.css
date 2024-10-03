@@ -1,16 +1,50 @@
 .App {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    overflow-x: hidden;
    overflow-y: hidden;
    box-sizing: border-box;
    height: 100%;
    align-items: center;
-   padding: 0px 100px;
-   column-gap: 100px;
+   justify-content: center;
    background-color: lightcoral;
  }
 
+ .cardContainer {
+   display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    height: 80%;
+    align-items: center;
+    padding: 0px 100px;
+    column-gap: 100px;
+    box-shadow: inset #000000 0 0px 20px;
+ }
+
+ .buttonContainer {
+   display: flex;
+   flex-direction: row;
+   column-gap: 50px;
+   width: 250px;
+   margin-top: 50px;
+ }
+
+ button {
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   margin: 0px;
+   padding: 0px;
+   border-style: none;
+   box-shadow: 6px 5px 20px 0px #432f2f;
+   background-color: lightcoral;
+ }
+
+ button:active {
+
+ }
  h1 {
    text-align: center;
    text-decoration: none;

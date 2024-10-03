@@ -3,9 +3,8 @@
     background-color: #e7e7d2;
     border-radius: 100px 100px 50px 50px;
     overflow-x: hidden;
-    max-width: 600px;
-    min-width: 400px;
-    height: 70%;
+    width: 400px;
+    height: 630px;
     box-shadow: 0px 7px 20px 0px;
 }
 
