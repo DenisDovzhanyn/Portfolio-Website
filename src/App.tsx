@@ -12,7 +12,7 @@ function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
   const [displayedRepos, setDisplayedRepos] = useState<Repository[]>([]);
-  const [exitDirection, setExitDirection] = useState('');
+  const [enterDirection, setEnterDirection] = useState('');
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -38,8 +38,8 @@ function App() {
   }, [repos])
 
   const nextCard = () => {
-    setExitDirection('left');
-    // setTimeOut here to let the cards receive the exitdirection update,
+    setEnterDirection('left');
+    // setTimeOut here to let the cards receive the Enterdirection update,
     // otherwise it can cause the cards to leave in the wrong direction
     setTimeout( () => {
       setDisplayedRepos( currentDisplayed => {
@@ -59,7 +59,7 @@ function App() {
 
 
   const previousCard = () => {
-    setExitDirection('right');
+    setEnterDirection('right');
     
     setTimeout( () => {
       setDisplayedRepos( currentDisplayed => {
@@ -92,12 +92,12 @@ function App() {
   }
   return (
     <div className="App" >
-      <div className ='cardContainer'>
-        {displayedRepos.map( (repo) => 
-          <Card repo = {repo} key={repo.name} direction={exitDirection}/>
-        )}
+      <div className='head'>
+        <h1 id='name'>Denis Dovzhanyn</h1>
       </div>
-      <div className='buttonContainer'>
+      
+      <div className='main'>
+      
         <motion.button className ='previousCard' 
         onClick={previousCard}
         whileHover={{
@@ -113,6 +113,13 @@ function App() {
             <path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM116.7 244.7l112-112c4.6-4.6 11.5-5.9 17.4-3.5s9.9 8.3 9.9 14.8l0 64 96 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32l-96 0 0 64c0 6.5-3.9 12.3-9.9 14.8s-12.9 1.1-17.4-3.5l-112-112c-6.2-6.2-6.2-16.4 0-22.6z"/>
           </svg>
         </motion.button>
+
+
+        <div className='cardContainer'>
+          {displayedRepos.map( (repo, index) => 
+            <Card repo = {repo} key={repo.name} direction={enterDirection} index={index}/>
+          )}
+        </div>
 
         <motion.button className ='nextCard' 
         onClick={nextCard} 

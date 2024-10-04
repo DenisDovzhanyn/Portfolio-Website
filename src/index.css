@@ -1,7 +1,9 @@
- html {
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+html {
   margin: 0px;
   padding: 0px;
   height: 100%;
+  font-family: 'Readex Pro';
 }
 
 body {
