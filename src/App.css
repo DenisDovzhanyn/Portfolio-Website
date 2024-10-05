@@ -31,13 +31,17 @@
     column-gap: 100px;
     width: 90%;
     justify-content: space-around;
+    border-style: solid;
+    border-top-style: none;
+    border-color: wheat;
+    border-width: thin;
  }
 
  .head {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 10%;
   width: 100%;
   z-index: 100;

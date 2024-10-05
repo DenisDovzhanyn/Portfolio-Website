@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
-import logo from './logo.svg';
 import './App.css';
 import './loading.css';
 import { getReposFromS3 } from './repo.service';
 import { Card } from './components/Card';
 import {Repository} from './types/repository'
-import { isVisible } from '@testing-library/user-event/dist/utils';
+import { ImageLink } from './components/ImageWithText';
+import gitHubIcon from './assets/Images/GitHub.svg';
+import LinkedinIcon from './assets/Images/Linkedin.svg';
 
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
   const [displayedRepos, setDisplayedRepos] = useState<Repository[]>([]);
-  const [enterDirection, setEnterDirection] = useState('');
+  const [enterDirection, setEnterDirection] = useState<'left' | 'right'>('left');
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -93,7 +94,9 @@ function App() {
   return (
     <div className="App" >
       <div className='head'>
+        <ImageLink text='Github' src={gitHubIcon} link='https://github.com/DenisDovzhanyn'/>
         <h1 id='name'>Denis Dovzhanyn</h1>
+        <ImageLink text='Linkedin' src= {LinkedinIcon} link='https://www.linkedin.com/in/denis-dovzhanyn/'/>
       </div>
       
       <div className='main'>

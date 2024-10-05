@@ -1,0 +1,26 @@
+.headerFooterImg {
+    width: 30px;
+    height: 30px;
+}
+
+.headerFooterH2 {
+    border-style: none;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.imageLink {
+    width: 30px;
+    height: 30px;
+}
+
+.TextWithImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}

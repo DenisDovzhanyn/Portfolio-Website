@@ -16,28 +16,28 @@ a {
     color: #2f2424;
   }
   
-  h1 {
-    border-bottom: black;
-    border-bottom-style: solid;
-    padding-bottom: 25px;
-    border-color: #a3ad84;
-    margin: 0px;
-    padding-top: 21px;
-  }
+h1 {
+  border-bottom: black;
+  border-bottom-style: solid;
+  padding-bottom: 25px;
+  border-color: #a3ad84;
+  margin: 0px;
+  padding-top: 21px;
+}
 
-  .title {
-    background-color: #e7e7d2;
-  }
-  
-  p {
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 17px;
-    background-color: #e7e7d2;
-    height: 100%;
-    margin: 0px;
-    padding-top: 20px;
-  }
+.title {
+  background-color: #e7e7d2;
+}
+
+p {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 17px;
+  background-color: #e7e7d2;
+  height: 100%;
+  margin: 0px;
+  padding-top: 20px;
+}
 
 
 /*
