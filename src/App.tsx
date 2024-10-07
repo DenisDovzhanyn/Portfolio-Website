@@ -103,7 +103,7 @@ function App() {
       
       <div className='main'>
       
-        <motion.button className ='previousCard' 
+        <motion.button id ='previousCard' 
         onClick={previousCard}
         whileHover={{
           scale: 1.05,
@@ -126,7 +126,7 @@ function App() {
           )}
         </div>
 
-        <motion.button className ='nextCard' 
+        <motion.button id ='nextCard' 
         onClick={nextCard} 
         whileHover={{
           scale: 1.05,

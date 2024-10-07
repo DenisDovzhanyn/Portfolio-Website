@@ -24,3 +24,20 @@
     align-items: center;
     column-gap: 5px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .imageLink {
+        height: 20px;
+        width: 20px;
+    }
+
+    .headerFooterImg {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .headerFooterH2 {
+        font-size: 15px;
+    }
+}
