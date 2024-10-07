@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7c287d8.css",
+    "main.css": "/static/css/main.d9ef51aa.css",
     "main.js": "/static/js/main.a949d71c.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/Denis-Dovzhanyn-RESUME.pdf": "/static/media/Denis-Dovzhanyn-RESUME.bd4bb539d29254d353a8.pdf",
@@ -9,12 +9,12 @@
     "index.html": "/index.html",
     "static/media/Email.svg": "/static/media/Email.e9596377ff8137a7e40d5baaf2a5ff85.svg",
     "static/media/Resume.svg": "/static/media/Resume.d5646902d87c69f2898d1af92e52444b.svg",
-    "main.e7c287d8.css.map": "/static/css/main.e7c287d8.css.map",
+    "main.d9ef51aa.css.map": "/static/css/main.d9ef51aa.css.map",
     "main.a949d71c.js.map": "/static/js/main.a949d71c.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7c287d8.css",
+    "static/css/main.d9ef51aa.css",
     "static/js/main.a949d71c.js"
   ]
 }

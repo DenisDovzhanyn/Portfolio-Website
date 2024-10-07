@@ -33,8 +33,8 @@
     }
 
     .headerFooterImg {
-        height: fit-content;
-        width: fit-content;
+        height: 20px;
+        width: 20px;
     }
 
     .headerFooterH2 {
