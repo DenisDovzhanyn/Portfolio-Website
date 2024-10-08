@@ -61,26 +61,32 @@
  }
 
  @media screen and (max-width: 600px){
+
+    .main {
+      height: 85%;
+    }
     #previousCard {
       position: absolute;
       left: 0;
       height: 510px;
-      top: 255px;
+      top: 270px;
       width: 50%;
       margin: 0px;
       opacity: 0;
       z-index: 100;
+      transition: none !important;
     }
 
     #nextCard {
       position: absolute;
       right: 0;
       height: 510px;
-      top: 255px;
+      top: 270px;
       width: 50%;
       margin: 0px;
       opacity: 0;
       z-index: 100;
+      transition: none !important;
     }
 
     .cardContainer {
